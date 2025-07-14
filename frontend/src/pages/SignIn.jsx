@@ -4,6 +4,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import SuperHeader from '../components/SuperHeader';
 import { useAuth } from '../context/AuthContext';
 import { EyeIcon, EyeSlashIcon } from '@heroicons/react/24/outline';
+import SocialLogins from '../components/SocialLogins';
 
 const credentials = {
   'superadmin@test.com': { password: 'password', role: 'superadmin' },
@@ -35,14 +36,14 @@ const SignIn = () => {
   };
 
   return (
-    <div className="bg-white pb-16">
+    <div className="bg-gray-900 min-h-screen">
       <SuperHeader 
         title="Sign In to Your Account"
         subtitle="Access your dashboard to manage your fleet and view real-time analytics."
       />
       <div className="flex justify-center -mt-16">
         <motion.div
-          className="max-w-md w-full bg-white p-8 rounded-2xl shadow-lg border border-gray-200 relative"
+          className="max-w-md w-full bg-black/20 backdrop-blur-lg p-8 rounded-2xl shadow-lg border border-gray-700 relative"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
@@ -58,7 +59,7 @@ const SignIn = () => {
                   type="email" 
                   autoComplete="email" 
                   required 
-                  className="appearance-none rounded-none relative block w-full px-3 py-3 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" 
+                  className="appearance-none rounded-none relative block w-full px-3 py-3 border border-gray-700 bg-gray-800/50 placeholder-gray-400 text-white rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" 
                   placeholder="Email address" 
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
@@ -72,7 +73,7 @@ const SignIn = () => {
                   type={showPassword ? 'text' : 'password'} 
                   autoComplete="current-password" 
                   required 
-                  className="appearance-none rounded-none relative block w-full px-3 py-3 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" 
+                  className="appearance-none rounded-none relative block w-full px-3 py-3 border border-gray-700 bg-gray-800/50 placeholder-gray-400 text-white rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" 
                   placeholder="Password" 
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
@@ -92,7 +93,7 @@ const SignIn = () => {
             <div className="flex items-center justify-between">
               <div className="flex items-center">
                 <input id="remember-me" name="remember-me" type="checkbox" className="h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300 rounded" />
-                <label htmlFor="remember-me" className="ml-2 block text-sm text-gray-900">Remember me</label>
+                <label htmlFor="remember-me" className="ml-2 block text-sm text-gray-300">Remember me</label>
               </div>
 
               <div className="text-sm">
@@ -105,6 +106,7 @@ const SignIn = () => {
                 Sign in
               </button>
             </div>
+            <SocialLogins />
           </form>
           <p className="mt-6 text-center text-sm text-gray-600">
             Don't have an account?{' '}

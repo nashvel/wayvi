@@ -9,8 +9,9 @@ const SocialIcon = ({ children }) => (
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-900 text-gray-300">
-      <div className="container mx-auto px-6 py-16">
+    <footer className="bg-gray-900 text-gray-300 relative overflow-hidden">
+      <div className="absolute inset-0 bg-gradient-to-r from-purple-600 via-pink-500 to-red-500 opacity-30 blur-3xl"></div>
+      <div className="relative container mx-auto px-6 py-16">
         <div className="grid grid-cols-2 md:grid-cols-5 gap-8">
           <div className="col-span-2 md:col-span-1">
             <h3 className="text-2xl font-bold text-white mb-4">Wayvi</h3>

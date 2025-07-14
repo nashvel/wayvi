@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import AnimatedDashboardPreview from './AnimatedDashboardPreview';
 
@@ -19,12 +20,11 @@ const Hero = () => {
           <p className="text-lg md:text-xl text-gray-200 mb-8 max-w-xl mx-auto md:mx-0">
             Join the transit systems that use Wayvi to accept payments, power custom rider experiences, and build a more efficient operation.
           </p>
-          <form className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto md:mx-0">
-            <input type="email" placeholder="Email address" className="flex-grow px-4 py-3 rounded-md text-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-400" />
-            <button type="submit" className="bg-indigo-500 text-white px-6 py-3 rounded-md font-semibold hover:bg-indigo-600 transition-colors">
-              Start Now
-            </button>
-          </form>
+          <div className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto md:mx-0">
+            <Link to="/signin" className="bg-indigo-500 text-white px-6 py-3 rounded-md font-semibold hover:bg-indigo-600 transition-colors flex items-center justify-center">
+              Get Started
+            </Link>
+          </div>
         </motion.div>
         <motion.div
           className="relative h-full min-h-[300px] md:min-h-[400px]"

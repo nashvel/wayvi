@@ -2,34 +2,49 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import SuperHeader from '../components/SuperHeader';
+import SocialLogins from '../components/SocialLogins';
 
 const SignUp = () => {
   return (
-    <div className="bg-white pb-16">
+    <div className="bg-gray-900 min-h-screen">
       <SuperHeader 
         title="Create Your Account"
         subtitle="Join thousands of fleets already optimizing their routes and saving costs with Wayvi."
       />
       <div className="flex justify-center -mt-16">
         <motion.div
-          className="max-w-md w-full bg-white p-8 rounded-2xl shadow-lg border border-gray-200 relative"
+          className="max-w-md w-full bg-black/20 backdrop-blur-lg p-8 rounded-2xl shadow-lg border border-gray-700 relative"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
         >
           <form className="space-y-6">
             <div className="rounded-md shadow-sm space-y-4">
-              <div>
-                <label htmlFor="full-name" className="sr-only">Full name</label>
-                <input
-                  id="full-name"
-                  name="name"
-                  type="text"
-                  autoComplete="name"
-                  required
-                  className="appearance-none relative block w-full px-3 py-3 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
-                  placeholder="Full name"
-                />
+              <div className="flex gap-4">
+                <div className="w-1/2">
+                  <label htmlFor="first-name" className="sr-only">First name</label>
+                  <input
+                    id="first-name"
+                    name="firstName"
+                    type="text"
+                    autoComplete="given-name"
+                    required
+                    className="appearance-none relative block w-full px-3 py-3 border border-gray-700 bg-gray-800/50 placeholder-gray-400 text-white rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                    placeholder="First name"
+                  />
+                </div>
+                <div className="w-1/2">
+                  <label htmlFor="last-name" className="sr-only">Last name</label>
+                  <input
+                    id="last-name"
+                    name="lastName"
+                    type="text"
+                    autoComplete="family-name"
+                    required
+                    className="appearance-none relative block w-full px-3 py-3 border border-gray-700 bg-gray-800/50 placeholder-gray-400 text-white rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                    placeholder="Last name"
+                  />
+                </div>
               </div>
               <div>
                 <label htmlFor="email-address" className="sr-only">Email address</label>
@@ -39,7 +54,7 @@ const SignUp = () => {
                   type="email"
                   autoComplete="email"
                   required
-                  className="appearance-none relative block w-full px-3 py-3 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                  className="appearance-none relative block w-full px-3 py-3 border border-gray-700 bg-gray-800/50 placeholder-gray-400 text-white rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                   placeholder="Email address"
                 />
               </div>
@@ -51,7 +66,7 @@ const SignUp = () => {
                   type="password"
                   autoComplete="new-password"
                   required
-                  className="appearance-none relative block w-full px-3 py-3 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                  className="appearance-none relative block w-full px-3 py-3 border border-gray-700 bg-gray-800/50 placeholder-gray-400 text-white rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                   placeholder="Password"
                 />
               </div>
@@ -62,8 +77,9 @@ const SignUp = () => {
                 Create account
               </button>
             </div>
+            <SocialLogins />
           </form>
-          <p className="mt-6 text-center text-sm text-gray-600">
+          <p className="mt-6 text-center text-sm text-gray-400">
             Already have an account?{' '}
             <Link to="/signin" className="font-medium text-indigo-600 hover:text-indigo-500">
               Sign in
