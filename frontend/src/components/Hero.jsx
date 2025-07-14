@@ -1,18 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-
-// Placeholder for the new dashboard preview component
-const DashboardPreview = () => (
-  <div className="relative w-full h-full bg-white rounded-2xl shadow-2xl p-4 border border-gray-200">
-    <div className="h-48 bg-gray-200 rounded-lg flex items-center justify-center">
-      <p className="text-gray-500">Bus Tracking Dashboard</p>
-    </div>
-    <div className="mt-4 space-y-2">
-      <div className="h-8 bg-gray-100 rounded"></div>
-      <div className="h-8 bg-gray-100 rounded w-5/6"></div>
-    </div>
-  </div>
-);
+import AnimatedDashboardPreview from './AnimatedDashboardPreview';
 
 const Hero = () => {
   return (
@@ -44,7 +32,7 @@ const Hero = () => {
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8, delay: 0.2 }}
         >
-          <DashboardPreview />
+          <AnimatedDashboardPreview />
         </motion.div>
       </div>
     </section>

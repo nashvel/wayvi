@@ -6,7 +6,7 @@ const Developers = () => {
     <div className="bg-white">
       <SuperHeader 
         title="Developer Hub"
-        subtitle="Built with passion by Nacht. This project showcases a modern, responsive web application using cutting-edge technologies."
+        subtitle="This project showcases a modern, responsive web application using cutting-edge technologies."
       />
 
       {/* Main Content */}
@@ -29,9 +29,13 @@ const Developers = () => {
               </div>
             </div>
             <div className="mt-16 text-center">
-              <h2 className="text-3xl font-bold text-gray-900 mb-4">About Nacht</h2>
+              <h2 className="text-3xl font-bold text-gray-900 mb-4">
+                <a href="https://dev-nacht.vercel.app" target="_blank" rel="noopener noreferrer" className="text-indigo-600 hover:text-indigo-500 transition-colors">
+                  Developer: Nacht
+                </a>
+              </h2>
               <p className="text-lg text-gray-600 leading-relaxed">
-                Nacht is a developer focused on creating beautiful, functional, and user-centric web experiences. This bus tracking UI is a demonstration of skills in modern frontend development, from component architecture to subtle animations that enhance usability.
+                This bus tracking UI is a demonstration of skills in modern frontend development, from component architecture to subtle animations that enhance usability. Visit the portfolio to see more work.
               </p>
             </div>
           </div>
