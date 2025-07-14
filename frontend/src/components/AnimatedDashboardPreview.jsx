@@ -79,19 +79,37 @@ const AnimatedDashboardPreview = () => {
   }, []);
 
   return (
-    <div className="relative w-full h-full bg-gray-900 rounded-2xl shadow-2xl p-4 border border-gray-700 overflow-hidden">
-      <GlobeAltIcon className="absolute -top-8 -left-8 w-48 h-48 text-gray-700 opacity-20" />
-      <div className="absolute inset-0 z-0 opacity-20 p-4"><LineChart /></div>
+    <div className="relative w-full h-full rounded-3xl p-6 overflow-hidden">
+      {/* Background gradient and blur */}
+      <div className="absolute inset-0 bg-gradient-to-br from-indigo-900/30 via-gray-900/40 to-blue-900/30 backdrop-blur-3xl -m-4"></div>
+      
+      {/* Animated background elements */}
+      <div className="absolute inset-0 z-0 opacity-30">
+        <div className="absolute -top-20 -right-20 w-64 h-64 bg-indigo-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"></div>
+        <div className="absolute -bottom-20 -left-20 w-72 h-72 bg-blue-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000"></div>
+      </div>
+      
+      <div className="absolute inset-0.5 bg-gradient-to-br from-white/5 to-white/0 rounded-3xl" style={{
+        backdropFilter: 'blur(16px)',
+        WebkitBackdropFilter: 'blur(16px)',
+        border: '1px solid rgba(255, 255, 255, 0.1)'
+      }}></div>
+      
       <div className="relative z-10 flex flex-col h-full">
-        <h3 className="text-white font-bold text-lg mb-4">Live Fleet Overview</h3>
+        <h3 className="text-white font-bold text-xl mb-6 bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">Live Fleet Overview</h3>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 flex-grow">
           <motion.div 
-            className="bg-gray-800/50 backdrop-blur-sm rounded-lg p-4 flex flex-col items-center justify-center text-center border border-gray-700"
+            className="bg-white/5 backdrop-blur-lg rounded-2xl p-5 flex flex-col items-center justify-center text-center border border-white/10 shadow-2xl hover:bg-white/10 transition-all duration-300 hover:shadow-indigo-500/20 hover:border-indigo-400/30"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
+            style={{
+              boxShadow: '0 8px 32px rgba(0, 0, 0, 0.1)',
+              backdropFilter: 'blur(12px)',
+              WebkitBackdropFilter: 'blur(12px)'
+            }}
           >
-            <h4 className="text-sm text-gray-400 font-semibold">On-Time</h4>
+            <h4 className="text-sm text-gray-300 font-medium mb-2">On-Time</h4>
             <div className="relative my-2 w-full h-full flex items-center justify-center">
               <div className="relative w-[120px] h-[120px]">
                   <div className="absolute inset-0 z-20 flex items-center justify-center">
@@ -106,12 +124,17 @@ const AnimatedDashboardPreview = () => {
             </div>
           </motion.div>
           <motion.div 
-            className="bg-gray-800/50 backdrop-blur-sm rounded-lg p-4 flex flex-col items-center justify-center text-center border border-gray-700"
+            className="bg-white/5 backdrop-blur-lg rounded-2xl p-5 flex flex-col items-center justify-center text-center border border-white/10 shadow-2xl hover:bg-white/10 transition-all duration-300 hover:shadow-indigo-500/20 hover:border-indigo-400/30"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.4 }}
+            style={{
+              boxShadow: '0 8px 32px rgba(0, 0, 0, 0.1)',
+              backdropFilter: 'blur(12px)',
+              WebkitBackdropFilter: 'blur(12px)'
+            }}
           >
-            <h4 className="text-sm text-gray-400 font-semibold">Active Vehicles</h4>
+            <h4 className="text-sm text-gray-300 font-medium mb-2">Active Vehicles</h4>
             <div className="text-5xl font-bold text-white my-2">
                 {stats.fleet}
               </div>
@@ -119,13 +142,17 @@ const AnimatedDashboardPreview = () => {
           </motion.div>
         </div>
         <motion.div 
-          className="mt-4 bg-gray-800/50 backdrop-blur-sm rounded-lg p-3 flex items-center gap-3 border border-gray-700"
+          className="mt-6 bg-white/5 backdrop-blur-lg rounded-xl p-3 flex items-center gap-3 border border-white/10 shadow-lg"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.6 }}
+          style={{
+            backdropFilter: 'blur(12px)',
+            WebkitBackdropFilter: 'blur(12px)'
+          }}
         >
-          <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
-          <p className="text-sm text-gray-300">All systems operational</p>
+          <div className="w-2.5 h-2.5 bg-green-400 rounded-full animate-pulse shadow-glow shadow-green-400/50"></div>
+          <p className="text-sm text-gray-200">All systems operational</p>
         </motion.div>
       </div>
     </div>
