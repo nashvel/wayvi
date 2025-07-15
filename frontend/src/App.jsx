@@ -10,12 +10,17 @@ import SignUp from './pages/SignUp';
 import DashboardLayout from './components/DashboardLayout';
 import ProtectedRoute from './components/ProtectedRoute';
 import Dashboard from './pages/Dashboard';
-import SuperadminDashboard from './superadmin/pages/SuperadminDashboard.jsx';
 import AdminDashboard from './admin/pages/AdminDashboard.jsx';
 import ClientDashboard from './client/pages/ClientDashboard.jsx';
 import DriverDashboard from './driver/pages/DriverDashboard.jsx';
 import RiderDashboard from './riders/pages/RiderDashboard.jsx';
 import UsersManagement from './users/pages/UsersManagement.jsx';
+import SuperadminHome from './superadmin/pages/Home.jsx';
+import Explore from './superadmin/pages/Explore';
+import Notifications from './superadmin/pages/Notifications';
+import TripsToday from './superadmin/pages/TripsToday';
+import Profile from './superadmin/pages/Profile';
+import More from './superadmin/pages/More';
 
 // Placeholder component for pages to be created
 const Placeholder = ({ title }) => (
@@ -38,13 +43,13 @@ function App() {
       </Route>
       <Route element={<ProtectedRoute />}>
         <Route path="/dashboard" element={<DashboardLayout />}>
-          <Route index element={<Dashboard />} />
-          <Route path="superadmin" element={<SuperadminDashboard />} />
-          <Route path="admin" element={<AdminDashboard />} />
-          <Route path="client" element={<ClientDashboard />} />
-          <Route path="driver" element={<DriverDashboard />} />
-          <Route path="riders" element={<RiderDashboard />} />
-          <Route path="users" element={<UsersManagement />} />
+          <Route index element={<SuperadminHome />} />
+          <Route path="explore" element={<Explore />} />
+          <Route path="notifications" element={<Notifications />} />
+          <Route path="messages" element={<Placeholder title="Messages" />} />
+          <Route path="trips-today" element={<TripsToday />} />
+          <Route path="profile" element={<Profile />} />
+          <Route path="more" element={<More />} />
         </Route>
       </Route>
     </Routes>

@@ -1,74 +1,49 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { UsersIcon, MapIcon, CogIcon } from '@heroicons/react/24/outline';
+import CreatePost from '../../components/CreatePost';
+import Post from '../../components/Post';
 
-const stats = [
-  { name: 'Total Users', stat: '71,897', icon: UsersIcon },
-  { name: 'Active Buses', stat: '5,312', icon: MapIcon },
-  { name: 'System Status', stat: 'Operational', icon: CogIcon },
+const initialPosts = [
+  {
+    id: 1,
+    author: 'Buang Na User',
+    avatar: 'https://randomuser.me/api/portraits/men/1.jpg',
+    content: 'Just set up my new Wayvi dashboard! The new UI is looking slick. 🔥',
+    timestamp: new Date(Date.now() - 1000 * 60 * 5).toISOString(), // 5 minutes ago
+    likes: 12,
+    comments: [],
+  },
+  {
+    id: 2,
+    author: 'Ovulation Girl',
+    avatar: 'https://randomuser.me/api/portraits/women/2.jpg',
+    content: 'Excited to see how we can leverage the new social features for our community engagement. Great work, team!',
+    timestamp: new Date(Date.now() - 1000 * 60 * 60 * 2).toISOString(), // 2 hours ago
+    likes: 45,
+    comments: [],
+  },
 ];
 
 const SuperadminDashboard = () => {
-  return (
-    <div>
-      <h1 className="text-3xl font-bold text-gray-900">Superadmin Dashboard</h1>
-      <p className="mt-2 text-gray-600">Full control over the entire platform.</p>
+  const [posts, setPosts] = useState(initialPosts);
 
-      {/* Stats Cards */}
-      <div className="mt-8 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
-        {stats.map((item) => (
-          <div key={item.name} className="bg-white overflow-hidden shadow rounded-lg">
-            <div className="p-5">
-              <div className="flex items-center">
-                <div className="flex-shrink-0">
-                  <item.icon className="h-6 w-6 text-gray-400" aria-hidden="true" />
-                </div>
-                <div className="ml-5 w-0 flex-1">
-                  <dl>
-                    <dt className="text-sm font-medium text-gray-500 truncate">{item.name}</dt>
-                    <dd className="text-lg font-medium text-gray-900">{item.stat}</dd>
-                  </dl>
-                </div>
-              </div>
-            </div>
-          </div>
-        ))}
+  const handlePost = (newPost) => {
+    setPosts([newPost, ...posts]);
+  };
+
+  return (
+    <div className="bg-gray-100 text-gray-800 p-4 sm:p-6 lg:p-8">
+      <h1 className="text-4xl font-bold tracking-tight text-gray-900">Home</h1>
+      <p className="mt-2 text-gray-600">See what's new in your network.</p>
+
+      <div className="mt-8">
+        <CreatePost onPost={handlePost} />
       </div>
 
-      {/* User Management Table Placeholder */}
-      <div className="mt-8 bg-white shadow rounded-lg p-6">
-        <div className="flex justify-between items-center mb-4">
-            <h2 className="text-xl font-semibold text-gray-900">User Management</h2>
-            <button className="px-4 py-2 bg-indigo-600 text-white rounded-md hover:bg-indigo-700 transition-colors">
-                Add New User
-            </button>
-        </div>
-        <div className="overflow-x-auto">
-            <table className="min-w-full divide-y divide-gray-200">
-                <thead className="bg-gray-50">
-                    <tr>
-                        <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Name</th>
-                        <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Role</th>
-                        <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Status</th>
-                        <th scope="col" className="relative px-6 py-3">
-                            <span className="sr-only">Edit</span>
-                        </th>
-                    </tr>
-                </thead>
-                <tbody className="bg-white divide-y divide-gray-200">
-                    {/* Table rows will be dynamically generated here */}
-                    <tr>
-                        <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Jane Cooper</td>
-                        <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Admin</td>
-                        <td className="px-6 py-4 whitespace-nowrap">
-                            <span className="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">Active</span>
-                        </td>
-                        <td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                            <a href="#" className="text-indigo-600 hover:text-indigo-900">Edit</a>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
+      <div className="mt-8 space-y-6">
+        {posts.map((post) => (
+          <Post key={post.id} post={post} />
+        ))}
       </div>
     </div>
   );

@@ -15,23 +15,23 @@ const routes = [
 
 const AdminDashboard = () => {
   return (
-    <div>
-      <h1 className="text-3xl font-bold text-gray-900">Admin Dashboard</h1>
-      <p className="mt-2 text-gray-600">Oversee daily operations and manage system configurations.</p>
+    <div class="text-white">
+      <h1 class="text-3xl font-bold">Admin Dashboard</h1>
+      <p class="mt-2 text-gray-400">Oversee daily operations and manage system configurations.</p>
 
       {/* Stats Cards */}
-      <div className="mt-8 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+      <div class="mt-8 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
         {stats.map((item) => (
-          <div key={item.name} className="bg-white overflow-hidden shadow rounded-lg">
-            <div className="p-5">
-              <div className="flex items-center">
-                <div className="flex-shrink-0">
-                  <item.icon className="h-6 w-6 text-gray-400" aria-hidden="true" />
+          <div key={item.name} class="bg-gray-900 border border-gray-700 rounded-lg overflow-hidden">
+            <div class="p-5">
+              <div class="flex items-center">
+                <div class="flex-shrink-0">
+                  <item.icon class="h-6 w-6 text-gray-500" aria-hidden="true" />
                 </div>
-                <div className="ml-5 w-0 flex-1">
+                <div class="ml-5 w-0 flex-1">
                   <dl>
-                    <dt className="text-sm font-medium text-gray-500 truncate">{item.name}</dt>
-                    <dd className="text-lg font-medium text-gray-900">{item.stat}</dd>
+                    <dt class="text-sm font-medium text-gray-400 truncate">{item.name}</dt>
+                    <dd class="text-lg font-medium text-white">{item.stat}</dd>
                   </dl>
                 </div>
               </div>
@@ -41,37 +41,37 @@ const AdminDashboard = () => {
       </div>
 
       {/* Route Management Table */}
-      <div className="mt-8 bg-white shadow rounded-lg p-6">
-        <div className="flex justify-between items-center mb-4">
-            <h2 className="text-xl font-semibold text-gray-900">Route Management</h2>
-            <button className="px-4 py-2 bg-indigo-600 text-white rounded-md hover:bg-indigo-700 transition-colors">
+      <div class="mt-8 bg-gray-900 border border-gray-700 rounded-lg p-6">
+        <div class="flex justify-between items-center mb-4">
+            <h2 class="text-xl font-semibold text-white">Route Management</h2>
+            <button class="px-4 py-2 bg-blue-500 text-white rounded-full hover:bg-blue-600 transition-colors">
                 Add New Route
             </button>
         </div>
-        <div className="overflow-x-auto">
-            <table className="min-w-full divide-y divide-gray-200">
-                <thead className="bg-gray-50">
+        <div class="overflow-x-auto">
+            <table class="min-w-full divide-y divide-gray-700">
+                <thead class="bg-gray-800">
                     <tr>
-                        <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Route Name</th>
-                        <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Status</th>
-                        <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Assigned Buses</th>
-                        <th scope="col" className="relative px-6 py-3">
-                            <span className="sr-only">Edit</span>
+                        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-400 uppercase tracking-wider">Route Name</th>
+                        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-400 uppercase tracking-wider">Status</th>
+                        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-400 uppercase tracking-wider">Assigned Buses</th>
+                        <th scope="col" class="relative px-6 py-3">
+                            <span class="sr-only">Edit</span>
                         </th>
                     </tr>
                 </thead>
-                <tbody className="bg-white divide-y divide-gray-200">
+                <tbody class="bg-gray-900 divide-y divide-gray-700">
                     {routes.map((route) => (
                         <tr key={route.id}>
-                            <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">{route.name}</td>
-                            <td className="px-6 py-4 whitespace-nowrap">
-                                <span className={`px-2 inline-flex text-xs leading-5 font-semibold rounded-full ${route.status === 'Active' ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800'}`}>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-white">{route.name}</td>
+                            <td class="px-6 py-4 whitespace-nowrap">
+                                <span class={`px-2 inline-flex text-xs leading-5 font-semibold rounded-full ${route.status === 'Active' ? 'bg-green-900 text-green-300' : 'bg-red-900 text-red-300'}`}>
                                     {route.status}
                                 </span>
                             </td>
-                            <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{route.buses}</td>
-                            <td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                                <a href="#" className="text-indigo-600 hover:text-indigo-900">Edit</a>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-400">{route.buses}</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                                <a href="#" class="text-blue-400 hover:text-blue-300">Edit</a>
                             </td>
                         </tr>
                     ))}
