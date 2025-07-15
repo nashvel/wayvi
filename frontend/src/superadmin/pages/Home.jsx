@@ -16,7 +16,7 @@ const Home = () => {
       setPosts([
         {
           id: 1,
-          author: 'Buang Na User',
+          author: 'nacht',
           avatar: 'https://randomuser.me/api/portraits/men/32.jpg',
           content: 'Just set up my new Wayvi dashboard! The new UI is looking slick. 🔥',
           timestamp: new Date().toISOString(),
@@ -27,7 +27,7 @@ const Home = () => {
         },
         {
           id: 2,
-          author: 'Ovulation Girl',
+          author: 'angel',
           avatar: 'https://randomuser.me/api/portraits/women/44.jpg',
           content: 'Excited to see how we can leverage the new social features for our community engagement. Great work, team!',
           timestamp: new Date().toISOString(),
