@@ -1,8 +1,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import SuperHeader from '../components/SuperHeader';
-import SocialLogins from '../components/SocialLogins';
+import SuperHeader from '../components/common/SuperHeader';
+import SocialLogins from '../components/common/SocialLogins';
 
 const SignUp = () => {
   return (

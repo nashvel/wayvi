@@ -1,14 +1,14 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
-import Layout from './components/Layout';
+import Layout from './components/layout/Layout';
 import Home from './pages/Home';
 import Developers from './pages/Developers';
 import Pricing from './pages/Pricing';
 import Resources from './pages/Resources';
 import SignIn from './pages/SignIn';
 import SignUp from './pages/SignUp';
-import DashboardLayout from './components/DashboardLayout';
-import ProtectedRoute from './components/ProtectedRoute';
+import DashboardLayout from './components/dashboard/DashboardLayout';
+import ProtectedRoute from './components/auth/ProtectedRoute';
 import Dashboard from './pages/Dashboard';
 import AdminDashboard from './admin/pages/AdminDashboard.jsx';
 import ClientDashboard from './client/pages/ClientDashboard.jsx';

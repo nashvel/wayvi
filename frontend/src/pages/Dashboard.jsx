@@ -2,9 +2,9 @@ import React from 'react';
 import { useAuth } from '../context/AuthContext';
 
 // Import the new layout components
-import LeftSidebar from '../components/LeftSidebar';
-import MainFeed from '../components/MainFeed';
-import RightSidebar from '../components/RightSidebar';
+import LeftSidebar from '../components/dashboard/LeftSidebar';
+import MainFeed from '../components/post/MainFeed';
+import RightSidebar from '../components/dashboard/RightSidebar';
 
 // Import the role-specific dashboards
 import SuperadminDashboard from '../superadmin/pages/SuperadminDashboard.jsx';

@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRightIcon } from '@heroicons/react/20/solid';
-import SuperHeader from '../components/SuperHeader';
+import SuperHeader from '../components/common/SuperHeader';
 
 const resources = [
   {

@@ -1,9 +1,9 @@
 import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import SuperHeader from '../components/SuperHeader';
+import SuperHeader from '../components/common/SuperHeader';
 import { useAuth } from '../context/AuthContext';
 import { EyeIcon, EyeSlashIcon } from '@heroicons/react/24/outline';
-import SocialLogins from '../components/SocialLogins';
+import SocialLogins from '../components/common/SocialLogins';
 
 const credentials = {
   'superadmin@test.com': { password: 'password', role: 'superadmin' },

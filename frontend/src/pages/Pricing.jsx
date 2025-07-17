@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { CheckIcon } from '@heroicons/react/24/outline';
-import SuperHeader from '../components/SuperHeader';
+import SuperHeader from '../components/common/SuperHeader';
 
 const tiers = [
   {

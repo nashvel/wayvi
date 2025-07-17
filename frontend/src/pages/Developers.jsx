@@ -1,5 +1,5 @@
 import React from 'react';
-import SuperHeader from '../components/SuperHeader';
+import SuperHeader from '../components/common/SuperHeader';
 
 const Developers = () => {
   return (

@@ -1,9 +1,9 @@
 import React from 'react';
-import Hero from '../components/Hero';
-import TrustedBy from '../components/TrustedBy';
-import Features from '../components/Features';
-import Testimonials from '../components/Testimonials';
-import CTA from '../components/CTA';
+import Hero from '../components/home/Hero';
+import TrustedBy from '../components/common/TrustedBy';
+import Features from '../components/home/Features';
+import Testimonials from '../components/common/Testimonials';
+import CTA from '../components/common/CTA';
 
 const Home = () => {
   return (
