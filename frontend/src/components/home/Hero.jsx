@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import AnimatedDashboardPreview from './AnimatedDashboardPreview';
+import AnimatedDashboardPreview from "@/components/dashboard/AnimatedDashboardPreview.jsx";
 
 const Hero = () => {
   return (

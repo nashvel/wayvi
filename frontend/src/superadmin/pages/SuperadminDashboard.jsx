@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { UsersIcon, MapIcon, CogIcon } from '@heroicons/react/24/outline';
-import CreatePost from '../../components/CreatePost';
-import Post from '../../components/Post';
+import CreatePost from '@/components/post/CreatePost.jsx';
+import Post from '@/components/post/Post.jsx';
 
 const initialPosts = [
   {

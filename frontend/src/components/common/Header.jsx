@@ -1,5 +1,5 @@
 import React from 'react';
-import { useAuth } from '../context/AuthContext';
+import { useAuth } from "@/context/AuthContext.jsx";
 import { useNavigate, Link } from 'react-router-dom';
 import { Menu, Transition } from '@headlessui/react';
 import { ChevronDownIcon, ArrowRightIcon, Bars3Icon, XMarkIcon } from '@heroicons/react/20/solid';

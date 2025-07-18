@@ -3,7 +3,7 @@ import { Outlet } from 'react-router-dom';
 import { useSwipeable } from 'react-swipeable';
 import LeftSidebar from './LeftSidebar';
 import BusTrackingSidebar from './BusTrackingSidebar';
-import MobileHeader from './MobileHeader';
+import MobileHeader from "@/components/common/MobileHeader.jsx";
 
 const DashboardLayout = () => {
   const [isLeftSidebarOpen, setLeftSidebarOpen] = useState(false);

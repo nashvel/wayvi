@@ -1,0 +1,38 @@
+[
+  {
+    "name": "Super Admin",
+    "email": "superadmin@wayvi.com",
+    "password": "password123",
+    "role": "superadmin"
+  },
+  {
+    "name": "Admin User",
+    "email": "admin@wayvi.com",
+    "password": "password123",
+    "role": "admin"
+  },
+  {
+    "name": "Client User",
+    "email": "client@wayvi.com",
+    "password": "password123",
+    "role": "client"
+  },
+  {
+    "name": "Driver User",
+    "email": "driver@wayvi.com",
+    "password": "password123",
+    "role": "driver"
+  },
+  {
+    "name": "Rider User",
+    "email": "rider@wayvi.com",
+    "password": "password123",
+    "role": "rider"
+  },
+  {
+    "name": "Regular User",
+    "email": "user@wayvi.com",
+    "password": "password123",
+    "role": "user"
+  }
+]

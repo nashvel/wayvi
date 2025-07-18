@@ -1,5 +1,5 @@
 import React from 'react';
-import InteractiveMap from './InteractiveMap';
+import InteractiveMap from "@/components/map/InteractiveMap.jsx";
 import { MapPinIcon, ClockIcon, WifiIcon } from '@heroicons/react/24/solid';
 
 const BusInfoCard = ({ busNumber, status, location, eta }) => {

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import CreatePost from '../../components/CreatePost';
-import Post from '../../components/Post';
+import CreatePost from "@/components/post/CreatePost.jsx";
+import Post from "@/components/post/Post.jsx";
 
 const Home = () => {
   const [activeTab, setActiveTab] = useState('for-you');
