@@ -17,6 +17,7 @@ app.get('/api', (req, res) => res.send('API Running'));
 // Define Routes
 app.use('/api/auth', require('./routes/auth'));
 app.use('/api/data', require('./routes/data'));
+app.use('/api/test', require('./routes/test'));
 
 // Only listen on a port when running locally
 if (process.env.NODE_ENV !== 'production') {
