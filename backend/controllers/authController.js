@@ -9,7 +9,18 @@ exports.registerUser = async (req, res) => {
     return res.status(400).json({ errors: errors.array() });
   }
 
-  const { name, email, password, role } = req.body;
+  const { name, email, password } = req.body;
+  let { role } = req.body;
+
+  // Restrict roles that can be created via public registration
+  if (role && !['user', 'rider'].includes(role)) {
+    return res.status(400).json({ msg: 'Invalid role specified' });
+  }
+
+  // Default to 'user' if no role is provided
+  if (!role) {
+    role = 'user';
+  }
 
   try {
     let user = await User.findOne({ email });
@@ -22,7 +33,7 @@ exports.registerUser = async (req, res) => {
       name,
       email,
       password,
-      role, // Role can be optionally provided during registration
+      role, // This will be either 'user', 'rider', or the default 'user'
     });
 
     await user.save();
